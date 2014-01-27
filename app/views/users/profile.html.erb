@@ -6,3 +6,4 @@ Your profile
   <li><%=current_user.provider%></li>
   <li><img src="<%=current_user.image%>" alt="Here should be avatar"></li>
 </ul>
+<%= button_to 'Selfdestruct', "/users/#{current_user.id}", method: 'delete' %>
