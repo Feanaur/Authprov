@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 
 gem 'devise'
+gem 'cancan'
+gem 'role_model'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
