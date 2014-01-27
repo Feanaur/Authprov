@@ -19,10 +19,10 @@
         <%- else %>
           <li class="pull-right"><%= link_to image_tag("Facebook.png", :border => 0),
                                         {:action => user_omniauth_authorize_path(:facebook),
-                                         :controller => 'users'}%></li>
+                                         :controller => 'users/omniauth_callbacks'}%></li>
           <li class="pull-right"><%= link_to image_tag("Vkontakte.png", :border => 0),
                                         {:action => user_omniauth_authorize_path(:vkontakte),
-                                         :controller => 'users'}%></li></li>
+                                         :controller => 'users/omniauth_callbacks'}%></li></li>
         <%- end %>              
       </ul>
     </nav>
