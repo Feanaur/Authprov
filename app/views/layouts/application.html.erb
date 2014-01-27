@@ -17,12 +17,8 @@
           <li><a href="/users/profile">My Profile</a></li>   
           <li class="pull-right"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
         <%- else %>
-          <li class="pull-right"><%= link_to image_tag("Facebook.png", :border => 0),
-                                        {:action => user_omniauth_authorize_path(:facebook),
-                                         :controller => 'users/omniauth_callbacks'}%></li>
-          <li class="pull-right"><%= link_to image_tag("Vkontakte.png", :border => 0),
-                                        {:action => user_omniauth_authorize_path(:vkontakte),
-                                         :controller => 'users/omniauth_callbacks'}%></li></li>
+          <li class="pull-right"><%= link_to "Facebook", user_omniauth_authorize_path(:facebook)%></li>
+          <li class="pull-right"><%= link_to "VK", user_omniauth_authorize_path(:vkontakte)%></li>
         <%- end %>              
       </ul>
     </nav>
