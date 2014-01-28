@@ -1,4 +1,13 @@
+require 'role_model'
+
 class User < ActiveRecord::Base
+
+  include RoleModel
+
+  roles_attribute :roles_mask
+ 
+  roles :admin, :editor
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
