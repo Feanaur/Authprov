@@ -5,11 +5,4 @@
     <b> Picture </b><br/>
     <%= f.file_field :pic %>
   </p>
-<% if user_signed_in? %>
-    <%current_user.pictures.each do |image| %>
-      <tr>
-        <td><%= image_tag image.pic.url %></td>
-      </tr>
-    <%end%>
-  
 <% end %>
