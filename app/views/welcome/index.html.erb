@@ -5,10 +5,6 @@
     <b> Picture </b><br/>
     <%= f.file_field :pic %>
   </p>
-
-  </br>
-  
-  <%end %>
 <% if user_signed_in? %>
     <%current_user.pictures.each do |image| %>
       <tr>
