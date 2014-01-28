@@ -9,5 +9,10 @@
   </br>
   
   <%end %>
-  <%= image_tag current_user.picture.pic.url %>
+    <%current_user.pictures.each do |image| %>
+      <tr>
+        <td><%= image_tag image.pic.url %></td>
+      </tr>
+    <%end%>
+  
 <% end %>
