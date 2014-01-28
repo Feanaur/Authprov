@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
                             email:auth.info.email,
                             image: auth.info.image,
                             password:Devise.friendly_token[0,20],
-                          )
+                            roles: [:editor])
       end
        
     end
