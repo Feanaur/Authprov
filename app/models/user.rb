@@ -47,6 +47,7 @@ class User < ActiveRecord::Base
                             email: access_token.uid+'@vk.com',
                             image: access_token.info.image,
                             password: Devise.friendly_token[0,20])
+        user.roles = [:editor]
       end
     end
   end
