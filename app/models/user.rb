@@ -2,6 +2,8 @@ require 'role_model'
 
 class User < ActiveRecord::Base
 
+  has_many :pictures
+
   include RoleModel
 
   roles_attribute :roles_mask
