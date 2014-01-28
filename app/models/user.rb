@@ -41,14 +41,15 @@ class User < ActiveRecord::Base
       if registered_user
         return registered_user
       else
-        user.roles = [:editor]
+
         user = User.create( provider: access_token.provider,
                             uid: access_token.uid,
                             name: access_token.info.name,
                             email: access_token.uid+'@vk.com',
                             image: access_token.info.image,
-                            password: Devise.friendly_token[0,20])
-        
+                            password: Devise.friendly_token[0,20],
+                            roles: [:editor])
+        #user.roles = [:editor]
       end
     end
   end
