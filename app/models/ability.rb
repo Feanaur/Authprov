@@ -8,7 +8,6 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     elsif user.has_role? :editor
-      #can :delete, user
       can :read, :all
     end
   end
