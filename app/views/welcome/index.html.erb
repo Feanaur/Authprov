@@ -1,5 +1,5 @@
 <h1>Greetings!</h1>
-<% if user_signed_in? %>
+
   <% form_for @picture, :html => { :multipart => true } do |f| %>
   <p>
     <b> Picture </b><br/>
@@ -9,6 +9,7 @@
   </br>
   
   <%end %>
+<% if user_signed_in? %>
     <%current_user.pictures.each do |image| %>
       <tr>
         <td><%= image_tag image.pic.url %></td>
