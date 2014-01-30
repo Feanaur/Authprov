@@ -3,7 +3,7 @@ Authprov::Application.routes.draw do
   get "users/index"
   get "users/profile"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :users, :only => [:destroy, :index]
+  resources :users#, :only => [:destroy, :index, :user]
   resources :pictures
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

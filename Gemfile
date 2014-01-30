@@ -10,10 +10,16 @@ gem 'paperclip'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', :group => :development
-gem 'pg', :group => :production
-gem 'rails_12factor', group: :production
+
+group :development do
+  gem 'sqlite3'
+  gem "awesome_print"
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
