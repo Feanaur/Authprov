@@ -4,7 +4,6 @@ class CreatePictures < ActiveRecord::Migration
       t.string :pic_file_name
       t.string :pic_content_type
       t.integer :pic_file_size
-      t.datetime :pic_updated_at
       t.belongs_to :user
       t.timestamps
     end

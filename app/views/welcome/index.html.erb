@@ -1,9 +1,9 @@
 <h1>Greetings!</h1>
 
-  <%= form_for @picture, :html=>{ :multipart=> true}  do |f| %>
+  <%= form_for @picture, :html => { :multipart => true }   do |f| %>
   <div class="field">
     <%= f.label :picture %>
-    <%= file_field(:pic, class: 'file_input') %></br>
+    <%= f.file_field :pic%></br>
     <%= f.submit %>
   </div>
   <% end %>

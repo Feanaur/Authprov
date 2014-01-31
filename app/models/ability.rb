@@ -11,4 +11,5 @@ class Ability
       can [:read,:update,:delete], :all
     end
   end
+
 end

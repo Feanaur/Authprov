@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
 
   def create
-    @picture = Picture.new(params.permit(:pic))
+    @picture = Picture.new(picture_params)
     @picture.user = current_user
     authorize! :create, @picture.user
     if @picture.save
@@ -13,5 +13,11 @@ class PicturesController < ApplicationController
 
   def show
     @pictures = Picture.find(params[current_user])
+  end
+
+  private 
+
+  def picture_params
+    params.require(:picture).permit(:pic)
   end
 end

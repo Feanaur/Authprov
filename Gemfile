@@ -14,6 +14,8 @@ gem 'rails', '4.0.2'
 group :development do
   gem 'sqlite3'
   gem "awesome_print"
+  gem "binding_of_caller"
+  gem "better_errors"
 end
 
 group :production do
