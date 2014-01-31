@@ -12,7 +12,7 @@ class PicturesController < ApplicationController
   end
 
   def show
-    @pictures = Picture.find(params[current_user])
+    @pictures = current_user.pictures
   end
 
   private 
