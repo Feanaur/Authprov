@@ -17,8 +17,8 @@
         <li><a href="/pictures/show">My Pictures</a></li> 
         <li class="pull-right"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
       <%- else %>
-        <li class="pull-right"><%= link_to "Facebook", user_omniauth_authorize_path(:facebook)%></li>
-        <li class="pull-right"><%= link_to "VK", user_omniauth_authorize_path(:vkontakte)%></li>
+        <li class="pull-right"><%= link_to image_tag("Facebook.png"), user_omniauth_authorize_path(:facebook)%></li>
+        <li class="pull-right"><%= link_to image_tag("Vkontakte.png"), user_omniauth_authorize_path(:vkontakte)%></li>
       <%- end %>              
     </ul>
   </nav>
