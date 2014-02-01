@@ -1,8 +1,11 @@
-Your profile
-<ul>
-  <li><%=current_user.name%></li>
-  <li><%=current_user.uid%></li>
-  <li><%=current_user.email%></li>
-  <li><%=current_user.provider%></li>
-  <li><img src="<%=current_user.image%>" alt="Here should be avatar"></li>
-</ul>
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%=current_user.name%></dd>
+  <dt>ID: </dt>
+  <dd><%=current_user.uid%></dd>
+  <dt>Email: </dt>
+  <dd><%=current_user.email%></dd>
+  <dt>Provider: </dt>
+  <dd><%=current_user.provider%></dd>
+  <%current_user.image%>
+</dl>

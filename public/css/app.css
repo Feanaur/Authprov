@@ -21,3 +21,9 @@
   margin-top: -36px;
   margin-right:20%;
 }
+.btn-exit{
+  padding: 10px 12px;
+  font-size: 16px;
+  line-height: 1.33;
+  border-radius: 5px;
+}

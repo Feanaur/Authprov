@@ -52,7 +52,6 @@ class User < ActiveRecord::Base
                             image: access_token.info.image,
                             password: Devise.friendly_token[0,20],
                             roles: [:editor])
-        #user.roles = [:editor]
       end
     end
   end
