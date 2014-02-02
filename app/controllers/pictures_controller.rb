@@ -1,13 +1,17 @@
 class PicturesController < ApplicationController
 
+  def new
+    @picture = Picture.new
+  end
+
   def create
     @picture = Picture.new(picture_params)
     @picture.user = current_user
     authorize! :create, @picture.user
     if @picture.save
-      redirect_to "/users/profile"
+      redirect_to "/pictures/show"
     else
-      erb :"welcome/index"
+      erb :"pictures/new"
     end
   end
 
