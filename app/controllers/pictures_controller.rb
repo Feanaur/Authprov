@@ -5,13 +5,19 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new(picture_params)
-    @picture.user = current_user
-    authorize! :create, @picture.user
-    if @picture.save
+    without_errors = true
+    params[:picture][:pic].each do |p|
+      @picture = Picture.new(pic: p, user: current_user)
+      if @picture.save
+        next
+      else
+        redirect_to "/pictures/new"
+        without_errors = false
+        break
+      end
+    end
+    if without_errors
       redirect_to "/pictures/show"
-    else
-      erb :"pictures/new"
     end
   end
 
@@ -19,9 +25,4 @@ class PicturesController < ApplicationController
     @pictures = current_user.pictures
   end
 
-  private 
-
-  def picture_params
-    params.require(:picture).permit(:pic)
-  end
 end
